@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  hobbit:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      - LANGCHAIN_API_URL=http://localhost:8001
+      - VECTORDB_API_URL=http://localhost:8002
+      - ML_INFERENCE_API_URL=http://localhost:8003
