@@ -24,11 +24,11 @@ class DatalakeService:
     Handles datalake search requests to the VitalEdge Datalake microservice.
     """
 
-    async def search_variants(self, study_id: int) -> list:
+    async def get_subjects(self, subject_id: int) -> list:
         async with httpx.AsyncClient() as client:
-            response = await client.post(
-                f"{Config.DATALAKE_API_URL}/studies/variants_by_study/103"
+            response = await client.get(
+                f"{Config.DATALAKE_API_URL}/subjects/{subject_id}"
             )
-            print(f"DatalakeService.search_variants returned response: {response.json()}")
+            print(f"DatalakeService.get_subjects returned response: {response.json()}")
             response.raise_for_status()
-            return response.json().get("results", [])
+            return response.json()

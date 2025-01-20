@@ -60,7 +60,7 @@ class RAGOrchestrator:
 
         # Step 0: Get data from Datalake
         print(f"@@@@@@@@@@@@@@@@@ Reading variants")
-        variants = await self.datalake_service.search_variants(103)
+        variants = await self.datalake_service.get_subjects(103)
         print(f"@@@@@@@@@@@@@@@@@Variants read: {variants}")
 
         # Step 1: Generate query embeddings
