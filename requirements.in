@@ -1,3 +1,16 @@
 gradio
 gr
 requests
+
+# Database libraries
+sqlalchemy
+databases
+asyncpg
+psycopg2
+
+# Configuration and settings management
+pydantic
+pydantic-settings
+
+# Testing framework
+pytest
